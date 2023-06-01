@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "review",
-    "slug": "review",
+    "name": "notepad",
+    "slug": "notepad",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
