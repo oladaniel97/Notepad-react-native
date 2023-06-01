@@ -1,0 +1,71 @@
+import { StyleSheet } from "react-native";
+
+
+export const GlobalStyle =StyleSheet.create({
+    container:{
+        flex:1,
+        padding:20,
+        fontFamily:'NunitoRegular'
+        
+    },
+    text:{
+        fontFamily:'NunitoBold',
+        fontSize:18,
+        textTransform:'capitalize'
+    },
+    paragraph:{
+        marginVertical:8,
+        lineHeight:20,
+    },
+    button:{
+        padding:10,
+        backgroundColor:'teal',
+        borderRadius:5,
+        marginTop:10,
+        borderColor:'gray',
+        textAlign:'center',
+        color:'white',
+        fontFamily:'NunitoRegular',
+        textTransform:'capitalize',
+        fontSize:18
+    },
+    image:{
+        width:100,
+        height:100,
+        borderRadius:100,
+        resizeMode:'cover'
+    },
+    textinput:{
+        padding:5,
+        marginTop:5,
+        marginBottom:5,
+        borderBottomWidth:2,
+        borderStyle:'dotted',
+        fontFamily:'NunitoRegular',
+        fontSize:20
+    },
+    list:{
+        padding:5,
+        marginTop:10,
+        borderColor:'gray',
+        borderBottomWidth:2,
+        fontFamily:'NunitoBold',
+        textTransform:'capitalize',
+        fontSize:24,
+        marginBottom:10,
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center',
+    },
+    listText:{
+        fontFamily:'NunitoBold',
+        textTransform:'capitalize',
+        fontSize:24,
+    },
+    error:{
+        fontFamily:'NunitoRegular',
+        fontSize:15,
+        color:'tomato',
+        textAlign:'center'
+    }
+})
