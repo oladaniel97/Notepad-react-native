@@ -1,4 +1,4 @@
-import { FlatList, ImageBackground, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, ImageBackground, Text, TouchableOpacity, View,StatusBar } from 'react-native';
 import React, { useState,useEffect } from 'react';
 import { GlobalStyle } from '../static/globalstyle';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -46,7 +46,8 @@ const Delete= async(key)=>{
   return (
     <ImageBackground  style={{flex:1}} source={require('../assets/bg.jpg')}>
       <View style={GlobalStyle.container} >
-        <View style={{flexDirection:'row',alignItems:'center',justifyContent:'space-between',marginTop:10,paddingBottom:5}}>
+      <StatusBar backgroundColor='white' barStyle={'dark-content'}/>
+        <View style={{flexDirection:'row',alignItems:'center',justifyContent:'space-between',paddingBottom:5}}>
             <Text style={[GlobalStyle.text,{fontSize:24,color:'teal'}]}>NOTEPAD</Text>
             <TouchableOpacity onPress={AddNew}>
                 <Text style={GlobalStyle.button}>Add New</Text>

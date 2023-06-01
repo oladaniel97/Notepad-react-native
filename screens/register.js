@@ -1,4 +1,4 @@
-import { Text, View ,ImageBackground,TouchableOpacity, TextInput, SafeAreaView,Keyboard,Alert, TouchableWithoutFeedback,ScrollView} from 'react-native'
+import { Text, View ,ImageBackground,TouchableOpacity, TextInput, SafeAreaView,Keyboard,Alert,StatusBar, TouchableWithoutFeedback,ScrollView} from 'react-native'
 import React from 'react'
 import { GlobalStyle } from '../static/globalstyle'
 import { Formik } from 'formik'
@@ -53,6 +53,7 @@ export default function AddNew({navigation,route}) {
         <ImageBackground  style={{flex:1}} source={require('../assets/bg.jpg')}>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <View style={GlobalStyle.container}>
+            <StatusBar backgroundColor='white' barStyle={'dark-content'}/>
             
 {/* install formik by using npm install formik */}
 {/* npm install yul for form validation */}
@@ -60,7 +61,7 @@ export default function AddNew({navigation,route}) {
             <Formik initialValues={{title:'',note:''}} onSubmit={submitForm} validationSchema={schema}>
                 {({handleChange, handleBlur,handleSubmit, values, errors, touched})=>(
                     
-                    <SafeAreaView style={{marginTop:5}}>
+                    <SafeAreaView >
                         <View style={{flexDirection:'row',alignItems:'center',justifyContent:'space-between'}}>
                         <Ionicons name="arrow-back-sharp" size={32} color="black"  onPress={()=>navigation.goBack()}/>
                         <Text style={[GlobalStyle.text,{fontSize:24,color:'teal'}]}>Add New </Text>

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,TouchableOpacity,Image,ImageBackground ,TextInput,Alert} from 'react-native'
+import { StyleSheet, Text, View,TouchableOpacity,Image,ImageBackground ,StatusBar,TextInput,Alert} from 'react-native'
 import React,{useState,useEffect} from 'react'
 import { GlobalStyle } from '../static/globalstyle'
 import { Ionicons } from '@expo/vector-icons';
@@ -46,7 +46,8 @@ export default function Details({navigation,route}) {
     return (
         <ImageBackground  style={{flex:1}} source={require('../assets/bg.jpg')}>
         <View style={GlobalStyle.container}>
-            <View style={{flexDirection:'row',alignItems:'center',justifyContent:'space-between',marginVertical:10}}>
+        <StatusBar backgroundColor='white' barStyle={'dark-content'}/>
+            <View style={{flexDirection:'row',alignItems:'center',justifyContent:'space-between',marginBottom:10}}>
             <Ionicons name="arrow-back-sharp" size={32} color="black"  onPress={()=>navigation.navigate('Home')}/>
                 <TouchableOpacity onPress={()=>updateNote(key)}>
                     <Text style={GlobalStyle.button}>Save Note</Text>
