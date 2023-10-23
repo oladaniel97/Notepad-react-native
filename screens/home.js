@@ -37,7 +37,7 @@ const AddNew=()=>{
 const Delete= async(key)=>{
   try {
       setNotes(notes.filter((item)=>item.key!==key))
-      await AsyncStorage.setItem('todo',JSON.stringify(notes.filter((item)=>item.key!==key)))
+      await AsyncStorage.setItem('note',JSON.stringify(notes.filter((item)=>item.key!==key)))
   } catch (error) {
       console.log(error)
   }

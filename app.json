@@ -4,7 +4,7 @@
     "slug": "review",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/Photo_1685703048626.png",
+    "icon": "./assets/icons.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/Photo_1685703048626.png",
@@ -19,7 +19,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/Photo_1685703048626.png",
+        "foregroundImage": "./assets/icons.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.oladaniel.review"
