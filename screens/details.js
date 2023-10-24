@@ -31,6 +31,7 @@ export default function Details({navigation,route}) {
             if ( noteKey !== -1){
                 notes[noteKey].title = title;
                 notes[noteKey].note = note;
+                notes[noteKey].lastModified = new Date().getTime();
                 await AsyncStorage.setItem('note',JSON.stringify(notes))
                 
                 console.log('notekey', notes)

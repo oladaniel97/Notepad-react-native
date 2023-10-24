@@ -8,13 +8,17 @@ import { AntDesign } from '@expo/vector-icons';
 export default function Home({navigation}) {
 
     const [notes,setNotes]=useState([])
+    
 
     const getData= async()=> {
       try {
         const jsonValue = await AsyncStorage.getItem('note');
         const storedNote = jsonValue != null ? JSON.parse(jsonValue) : [];
-        setNotes(storedNote);
-        console.log('lllll'  ,storedNote)
+         // Sort notes by lastModified date in descending order
+        const newNotes = [...storedNote].sort((a, b) => b.lastModified - a.lastModified);
+        
+        setNotes(newNotes);
+        console.log('llllls'  ,newNotes)
       } catch(e) {
         console.log(e);
       }

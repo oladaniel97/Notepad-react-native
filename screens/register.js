@@ -1,5 +1,5 @@
 import { Text, View ,ImageBackground,TouchableOpacity, TextInput, SafeAreaView,Keyboard,Alert,StatusBar, TouchableWithoutFeedback,ScrollView} from 'react-native'
-import React from 'react'
+import React, {useState} from 'react'
 import { GlobalStyle } from '../static/globalstyle'
 import { Formik } from 'formik'
 import * as yup from 'yup'
@@ -11,7 +11,7 @@ import { Ionicons } from '@expo/vector-icons';
 export default function AddNew({navigation,route}) {
 
     const {notes,setNotes}=route.params
-    
+    const [lastModified, setLastModified] = useState(null);
   
 
     const schema = yup.object({
@@ -22,10 +22,12 @@ export default function AddNew({navigation,route}) {
     const submitForm = async(values) => {
         try {
             await schema.validate(values)
+            // const timestamp = new Date().getTime();
             // we can use yup to validate our form
             const updatedNote =[{key: shortid.generate(),
                 title: values.title,
                 note: values.note,
+                lastModified: new Date().getTime(),
                 },...notes]
             await AsyncStorage.setItem('note',JSON.stringify(updatedNote))
             setNotes(updatedNote)
